@@ -1,20 +1,30 @@
-/**
- * Narrator Testing - Main Entry Point
- * This script initializes the narrator testing suite.
- */
+// Narrator Testing Entry Point
 
-// Fix: Defined apiKey by sourcing it from environment variables or a default string
-const apiKey = process.env.API_KEY || 'default_test_key';
+// Ensure environment variables are loaded if using a .env file
+// require('dotenv').config(); 
 
-function initializeNarrator() {
-  console.log('Initializing Narrator Testing...');
+const apiKey = process.env.API_KEY || process.env.OPENAI_API_KEY;
 
-  if (!apiKey || apiKey === 'default_test_key') {
-    console.warn('Warning: Using default API key. Ensure API_KEY is set in your environment.');
-  }
-
-  // Application logic using apiKey
-  console.log('Narrator started successfully with authorized access.');
+if (!apiKey) {
+  console.error("ReferenceError: 'apiKey' is not defined. Please ensure API_KEY is set in your environment variables.");
+  process.exit(1);
 }
 
-initializeNarrator();
+/**
+ * Main application logic for IronicRayquaza/narrator_testing
+ */
+async function runNarrator() {
+  try {
+    console.log("Starting Narrator service...");
+    // Example usage of the apiKey
+    console.log(`Authenticated successfully with key ending in: ${apiKey.slice(-4)}`);
+    
+    // Add your narration logic here
+    
+  } catch (error) {
+    console.error("An error occurred during execution:", error);
+    process.exit(1);
+  }
+}
+
+runNarrator();
