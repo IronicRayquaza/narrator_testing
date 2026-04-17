@@ -1,23 +1,17 @@
-// Accessing the API key from environment variables to ensure secure configuration
-const apiKey = process.env.API_KEY || 'development_mock_key';
+// Fetch the API key from environment variables
+const apiKey = process.env.API_KEY;
+
+if (!apiKey) {
+  console.error('ReferenceError: apiKey is not defined. Please ensure API_KEY is set in your environment.');
+  process.exit(1);
+}
 
 /**
- * IronicRayquaza Narrator Testing Suite
- * This module initializes the narrator components and validates connectivity.
+ * Narrator Testing Entry Point
  */
-function startNarrator() {
-    if (!apiKey || apiKey === 'development_mock_key') {
-        console.warn('Warning: Using a default or missing API Key. Ensure API_KEY is set in your environment.');
-    }
-
-    console.log('Narrator testing initialized successfully.');
-    // Implementation logic for the narrator goes here
-    return true;
+function main() {
+  console.log('Narrator service initialized successfully.');
+  // Application logic using apiKey would follow here
 }
 
-try {
-    startNarrator();
-} catch (error) {
-    console.error('Failed to start the narrator:', error.message);
-    process.exit(1);
-}
+main();
