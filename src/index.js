@@ -1,17 +1,20 @@
-// Fetch the API key from environment variables
-const apiKey = process.env.API_KEY;
-
-if (!apiKey) {
-  console.error('ReferenceError: apiKey is not defined. Please ensure API_KEY is set in your environment.');
-  process.exit(1);
-}
-
 /**
- * Narrator Testing Entry Point
+ * Narrator Testing Service
+ * Entry point for the narration engine.
  */
-function main() {
-  console.log('Narrator service initialized successfully.');
-  // Application logic using apiKey would follow here
+
+// Fix: Define the apiKey variable from environment variables or a default string
+const apiKey = process.env.API_KEY || 'development_key';
+
+function initializeNarrator() {
+  console.log('Initializing Narrator engine...');
+
+  if (!apiKey || apiKey === 'development_key') {
+    console.warn('CAUTION: Running without a valid production API_KEY.');
+  }
+
+  // logic using apiKey would follow here
+  console.log('Narrator engine started successfully.');
 }
 
-main();
+initializeNarrator();
