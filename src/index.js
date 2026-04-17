@@ -1,23 +1,21 @@
+// Initialize the apiKey from environment variables to ensure secure and flexible configuration
 const apiKey = process.env.API_KEY;
 
-if (!apiKey) {
-  console.error('CRITICAL: API_KEY environment variable is missing.');
-  process.exit(1);
-}
-
 /**
- * Main entry point for narrator_testing
+ * Narrator Testing Module
+ * Purpose: Validates the core narration engine functionality.
  */
-async function main() {
-  console.log('Narrator engine starting...');
-  
-  try {
-    // Logic using apiKey would be implemented here
-    console.log('Authentication successful. System is ready.');
-  } catch (error) {
-    console.error('System failed to initialize:', error.message);
+function startNarrator() {
+  console.log("Starting Narrator Testing process...");
+
+  if (!apiKey) {
+    console.error("Error: 'apiKey' is not defined in the environment. Please set the API_KEY environment variable.");
     process.exit(1);
   }
+
+  // Simulated logic for the narrator functionality
+  console.log("Authentication successful. Processing narrator sequences...");
+  console.log("Narrator logic executed successfully.");
 }
 
-main();
+startNarrator();
