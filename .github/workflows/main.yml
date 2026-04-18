@@ -18,3 +18,8 @@ jobs:
         node-version: 20
     - run: npm install
     - run: npm test
+    - name: Deploy to Production
+      run: |
+        echo "Starting deployment..."
+        echo "Error: SSL Certificate expired on production server"
+        exit 1
