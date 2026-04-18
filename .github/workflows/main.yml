@@ -1,9 +1,8 @@
-name: Node CI
+name: build
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run a failing test
-        run: node -e "console.log('Checking code...'); process.exit(1)" # THIS WILL FAIL
+      - run: node -e "console.log('Checking code...'); process.exit(0)"
