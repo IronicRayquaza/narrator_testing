@@ -1,20 +1,15 @@
-name: Intentional Failure Test
+name: CI
 
 on: [push]
 
 jobs:
-  fail-job:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Force failure
+      - name: Run Build
         run: |
-          echo "Forcing failure..."
-          exit 1
-
-
-
-#edit 1
+          echo "Build successful."
