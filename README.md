@@ -8,4 +8,4 @@ Force Conflict - Main Side
 This line was added on MAIN.
 
 
-lets see if ulla britta reads this after lurking online and send me the report try 2
+lets see if ulla britta reads this after lurking online and send me the report 
